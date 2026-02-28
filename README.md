@@ -31,7 +31,7 @@ Follow the steps below just like in a Colab notebook:
 ---
 ### 🧰 Step 3: Install Dependencies
 
-# Install additional required libraries
+##### Install additional required libraries
 
 
 ```python
@@ -43,7 +43,7 @@ Follow the steps below just like in a Colab notebook:
 !gdown --id '1sG0osAy9VV26HzQBoBkRWS4vT9X60VaB' --output /content/drive/MyDrive/ArewardShap/ArewardShap/GO-Bot-DRL/GoogleNews-vectors-negative300.bin.gz
 ```
 
-# Remove any incompatible or broken PyG packages
+#### Remove any incompatible or broken PyG packages
 ```python
 !pip uninstall -y torch torch-geometric torch-scatter torch-sparse torch-cluster torch-spline-conv
 ```
