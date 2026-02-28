@@ -1,6 +1,6 @@
 # 🧠 RewardShaping-GNN
 
-This repository provides implementations of reward shaping approch using **Shapley values based reward attribution and Graph Neural Networks (GNNs)** in dialogue systems. Supported explainability methods: **GAT**, **GraphSAGE**, **Node2Vec** — with and without **CSR (Contextual state representation)**.
+This repository provides implementations of reward shaping approch using **Shapley values based reward attribution and Graph Neural Networks (GNNs)** in dialogue systems. Supported **GAT** and explainability methods: **PGExplainer**, **GNNExplainer**, **LIME** — with and without **CSR (Contextual state representation)**.
 Base models include: **DQN** and **D3QN**.
 
 ---
@@ -87,18 +87,13 @@ Follow the steps below just like in a Colab notebook:
 Choose **one** of the following and run:
 
 ```python
+# GraphSAGE-based shaping
+!cp utilsshapgat.py utils.py
+```
+
+```python
 # GAT-based shaping
 !cp utilssparsestaticgat.py utils.py
-```
-
-```python
-# GraphSAGE-based shaping
-!cp utilsfinalsparseminsage.py utils.py
-```
-
-```python
-# Node2Vec-based shaping
-!cp utilsfinalN2Vsparse.py utils.py
 ```
 
 Then:
@@ -115,18 +110,28 @@ Then:
 Choose **one** of the following:
 
 ```python
+# Shapley values + CSR
+!cp utilsshapgatlearnablepartial.py utils.py
+```
+
+```python
 # GAT + CSR
 !cp utilssparsestaticpartialgat.py utils.py
 ```
 
 ```python
-# GraphSAGE + CSR
-!cp utilspartialsage.py utils.py
+# lime + CSR
+!cp utilslimepartial.py utils.py
 ```
 
 ```python
-# Node2Vec + CSR
-!cp utilsN2Vsparsepartial.py utils.py
+# GNNxplainer + CSR
+!cp utilsPGExplainerAgg.py utils.py
+```
+
+```python
+# PGExplainer + CSR
+!cp utilsPGExplainerAgg.py utils.py
 ```
 
 Then:
