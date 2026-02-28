@@ -1,6 +1,6 @@
 # 🧠 RewardShaping-GNN
 
-This repository provides implementations of various reward shaping strategies using **Graph Neural Networks (GNNs)** in dialogue systems. Supported GNNs: **GAT**, **GraphSAGE**, **Node2Vec** — with and without **CSR (Compressed Sparse Row)**.
+This repository provides implementations of reward shaping approch using **Shapley values based reward attribution and Graph Neural Networks (GNNs)** in dialogue systems. Supported explainability methods: **GAT**, **GraphSAGE**, **Node2Vec** — with and without **CSR (Contextual state representation)**.
 Base models include: **DQN** and **D3QN**.
 
 ---
@@ -15,8 +15,8 @@ Follow the steps below just like in a Colab notebook:
 
 ```python
 # Clone the repo and move into the directory
-!git clone https://github.com/shaghayeghsi/RewardShaping-GNN.git
-%cd RewardShaping-GNN.git
+!git clone [https://github.com/shaghayeghsi/RewardShaping-GNN.git](https://github.com/Shaghayeghii/Shapley-GNN-PBRS.git)
+%cd Shapley-GNN-PBRS.git
 ```
 
 ---
@@ -31,29 +31,44 @@ Follow the steps below just like in a Colab notebook:
 ---
 ### 🧰 Step 3: Install Dependencies
 
+# Install additional required libraries
+
+
+```python
+!pip install gdown
+```
+
 ```python
 # Download the pre-trained Word2Vec model (GoogleNews vectors)
 !gdown --id '1sG0osAy9VV26HzQBoBkRWS4vT9X60VaB' --output /content/drive/MyDrive/ArewardShap/ArewardShap/GO-Bot-DRL/GoogleNews-vectors-negative300.bin.gz
+```
 
 # Remove any incompatible or broken PyG packages
-!pip uninstall -y torch-scatter torch-sparse torch-cluster torch-spline-conv
+```python
+!pip uninstall -y torch torch-geometric torch-scatter torch-sparse torch-cluster torch-spline-conv
+```
 
+```python
 # Install compatible versions of PyG packages for torch==2.6.0 + CPU
-!pip install torch-scatter -f https://data.pyg.org/whl/torch-2.6.0+cpu.html
-!pip install torch-sparse -f https://data.pyg.org/whl/torch-2.6.0+cpu.html
-!pip install torch-cluster -f https://data.pyg.org/whl/torch-2.6.0+cpu.html
-!pip install torch-spline-conv -f https://data.pyg.org/whl/torch-2.6.0+cpu.html
+!pip install torch==2.6.0 torchvision torchaudio
+!pip install torch-scatter torch-sparse torch-cluster torch-spline-conv -f https://data.pyg.org/whl/torch-2.6.0+cpu.html
 !pip install torch-geometric -U
+```
 
-# Install additional required libraries
-!pip install gdown
+```python
 !pip install gensim
-!pip install node2vec
+```
+
+```python
 !pip install spektral
 !pip install networkx
 !pip install numpy
 !pip install pandas
 !pip install scikit-learn
+```
+
+```python
+!pip show torch
 ```
 
 ---
